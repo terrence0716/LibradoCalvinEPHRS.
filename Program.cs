@@ -65,7 +65,55 @@ class Program
 
     static void CreateEmployee()
     {
-        Console.WriteLine("Create");
+        //Console.WriteLine("Create");
+
+        Console.WriteLine("--- Add New Employee ---");
+        Console.Write("Enter First Name: ");
+        string firstName = Console.ReadLine();
+ 
+        Console.Write("Enter Last Name: ");
+        string lastName = Console.ReadLine();
+ 
+        Console.Write("Enter Department (IT, HR, Sales, Finance): ");
+        string department = Console.ReadLine();
+ 
+        Console.Write("Enter Job Title: ");
+        string jobTitle = Console.ReadLine();
+ 
+        Console.Write("Enter Monthly Salary: ");
+        decimal.TryParse(Console.ReadLine(), out decimal salary);
+ 
+        Console.Write("Enter Tax Rate (e.g., 0.12 for 12%): ");
+        double.TryParse(Console.ReadLine(), out double taxRate);
+ 
+        Console.Write("Enter Hire Date (yyyy-MM-dd): ");
+        if (!DateTime.TryParse(Console.ReadLine(), out DateTime hireDate))
+        {
+            hireDate = DateTime.Today;
+        }
+ 
+        Console.Write("Is Active? (y/n): ");
+        bool isActive = Console.ReadLine().Trim().ToLower() == "y";
+ 
+        Console.Write("Enter Email: ");
+        string email = Console.ReadLine();
+ 
+        Employee newEmployee = new Employee
+        {
+            ID = nextID++,
+            FirstName = firstName,
+            LastName = lastName,
+            Department = department,
+            JobTitle = jobTitle,
+            MonthlySalary = salary,
+            TaxRate = taxRate,
+            HireDate = hireDate,
+            IsActive = isActive,
+            Email = email
+        };
+        employees.Add(newEmployee);
+ 
+        Console.WriteLine("\nEmployee added successfully!");
     }
 
     static void ReadEmpolyee()
