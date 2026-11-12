@@ -29,7 +29,11 @@ class Program
         while (runningFlag)
         {
             Console.Clear();
+<<<<<<< HEAD
             Console.WriteLine("=== EMPLOYEE PAYROLL & HR MANAGEMENT SYSTEM MAIN BRANCH VERSION ===");
+=======
+            Console.WriteLine("=== EMPLOYEE PAYROLL & HR MANAGEMENT SYSTEM FEATURE BRANCH VERSION===");
+>>>>>>> LibradoCalvin
             Console.WriteLine("1. Create (Add Employee)");
             Console.WriteLine("2. Read (View All Employees)");
             Console.WriteLine("3. Search / Filter");
